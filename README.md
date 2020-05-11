@@ -1,6 +1,6 @@
 # Creating a workflow to identify cardiovascular diseases
-A Bioinformatics minor project.\n
-\n
+A Bioinformatics minor project.
+
 Our workflow ...
-\n
+
 The R script ...
