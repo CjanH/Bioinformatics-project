@@ -1,4 +1,4 @@
-# Creating a workflow to identify cardiovascular diseases
+# A workflow to identify cardiovascular diseases
 *A Bioinformatics minor project.*
 
 Introduction ...
