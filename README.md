@@ -1,5 +1,6 @@
 # A workflow to identify cardiovascular diseases
 *A Bioinformatics minor project.*
+
 Introduction
 At this time, one out of every three people will die of cardiovascular diseases. Which makes it the number one killer of humanity. In 2016, ischaemic heart disease and stroke were the main cause deaths worldwide. Which was a total of 15.2 million deaths in 2016. In the United States, heart diseases are the number one cause of deaths with a total of 23.1% of deaths in 2017. There are various types of heart diseases including conditions that affect the structure/function of the heart and blood vessel. Most are largely preventable and death rates are decreasing due to advances in prevention.
 
