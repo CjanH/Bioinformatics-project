@@ -11,8 +11,3 @@ The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict
 
 Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores and the missense mutation. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score. The second filter filters everything that doesn’t contain a missense mutation and a high PolyPhen score. And the last filter filters everything that doesn’t contain a missense mutation and a low Sift score.
 All 3 filters also output an extra file, a list of all possibly disease-causing SNPs.
-
-
-# R-script
-The R-script ...
-
