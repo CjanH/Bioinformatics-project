@@ -14,7 +14,7 @@ Approach of the project
 In this project, we have created a workflow to identify genetic variants that may underly cardiovascular diseases. This workflow starts with a quality control on the RNA sequence data. An publicly available dataset was used to create the workflow. Where needed, quality was improved by trimming the dataset. The good quality output was used to map and align to the human reference genome (Homo sapiens GRCh38.p13). After that, single nucleotide polymorphisms (SNPs) are determined and checked on quality. The SNPs with a good quality score are used for the hazard determination in the Ensemble Variant Effect Predictor (VEP) tool. This output is edited in R Studio to a clear spreadsheet. 
 
 # Workflow
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/CjanH/Bioinformatics-project/master/Flowchart.png?token=APRFBSZXCWIU5RXM3JBBCKS6YUF4W)
 The workflow consists of 3 parts: Galaxy, Variant Effect Predictor and the R-script (see photo workflow…..). 
 In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (*Homo sapiens GRCh38.p13*).  The resulting BAM file then needs to go through Freebayes for the detection of SNPs which results in a vcf file. Then the low-quality score SNPs are filtered away.
 
