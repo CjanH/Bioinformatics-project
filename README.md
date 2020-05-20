@@ -5,7 +5,7 @@ Introduction ...
 
 # Workflow
 The workflow consists of 3 parts: Galaxy, Variant Effect Predictor and the R-script (see photo workflow…..). 
-In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (Homo sapiens GRCh38.p13).  The resulting BAM file then needs to go through … for the detection of SNPs which results in a vcf file. Then the low-quality score and duplicated SNPs are filtered away.
+In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (*Homo sapiens GRCh38.p13*).  The resulting BAM file then needs to go through … for the detection of SNPs which results in a vcf file. Then the low-quality score and duplicated SNPs are filtered away.
 
 The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict the effect of each gene and outputs a tab-delimited text file containing information of every detected SNP by …. . 
 
