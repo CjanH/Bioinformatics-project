@@ -25,7 +25,7 @@ In the galaxy pipeline, the quality of the Illumina sequencing data is assessed 
 The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict the effect of each gene and outputs a tab-delimited text file containing information of every detected SNP by Freebayes. 
 
 Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores, the missense mutation and known heart disease-causing genes provided in the gene_list.csv file. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score and the provided heart disease-causing genes. The second filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and the provided heart disease-causing genes. And the last filter filters everything that doesn’t contain a missense mutation, a low Sift score and the provided heart disease-causing genes.
-All 3 filters also output an extra file, a list of all possibly disease-causing SNPs.
+All 3 filters also output an extra file, a list of all possibly heart disease-causing SNPs.
 
 # Manual
 **Needed tools for the private Galaxy:**
