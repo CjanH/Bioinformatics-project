@@ -29,14 +29,14 @@ All 3 filters also output an extra file, a list of all possibly heart disease-ca
 
 # Manual
 **Needed tools for the private Galaxy:**
- - FastQC Galaxy Version 0.72
- - Trimmomatic Galaxy Version 0.36.5
- - BWA Galaxy Version 0.7.17.4
- - SortSam Galaxy Version 2.18.2.1
- - MarkDuplicates Galaxy Version 2.18.2.2
- - Freebayes Galaxy Version 1.3.1
- - SnpSift Filter Galaxy Version 4.3
- - Rstudio Version 1.3.959 (optional)
+ - FastQC *Galaxy Version 0.72*
+ - Trimmomatic *Galaxy Version 0.36.5*
+ - BWA *Galaxy Version 0.7.17.4*
+ - SortSam *Galaxy Version 2.18.2.1*
+ - MarkDuplicates *Galaxy Version 2.18.2.2*
+ - Freebayes *Galaxy Version 1.3.1*
+ - SnpSift Filter *Galaxy Version 4.3*
+ - Rstudio *Version 1.3.959* (optional)
 
 **Step 1:**
 Perform quality control on the Illumina sequencing data in Galaxy with FastQC and look at the result.
