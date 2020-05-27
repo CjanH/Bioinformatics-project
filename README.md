@@ -26,3 +26,36 @@ The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict
 
 Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores and the missense mutation. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score. The second filter filters everything that doesn’t contain a missense mutation and a high PolyPhen score. And the last filter filters everything that doesn’t contain a missense mutation and a low Sift score.
 All 3 filters also output an extra file, a list of all possibly disease-causing SNPs.
+
+# Manual
+Needed tools for the private Galaxy:
+FastQC
+Trimmomatic
+BWA
+SortSam
+MarkDuplicates
+Freebayes
+SnpSift Filter
+Rstudio (optional)
+
+Step 1: 
+Perform quality control on the Illumina sequencing data in Galaxy with FastQC and look at the result.
+
+Step 2:
+Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_SNPs.ga), which is available in the Github repository, in the private Galaxy to identify the SNPs with the following settings:
+Indicate in the Trimmomatic tool if your data is Single-end or paired-end reads.
+Insert a HEADCROP operation in the Trimmomatic tool and indicate the number of bases to remove from the start with the information of the quality control in step 1.
+Indicate in the BWA tool to use the GRCh38/hg38 as the reference genome.
+Indicate in the MarkDuplicates tool to do not write duplicates to the output file.
+Indicate in the Freebayes tool to use the GRCh38/hg38 as the reference genome.
+Indicate in the SnpSift Filter tool the Filter criteria with ‘( QUAL > 20 )’.
+
+Step 3:
+Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predictor against the Ensembl/GENCODE transcripts database and download the txt file.
+
+Step 4:
+Run the R-script (r-script_disease_causing_genes_filtering_V2.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device.
+
+
+You can find the example output in this GitHub repository as: example_output.txt
+
