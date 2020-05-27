@@ -20,12 +20,12 @@ In this project, we have created a workflow to identify genetic variants that ma
 # Workflow
 ![](Flowchart.png)
 The workflow consists of 3 parts: Galaxy, Variant Effect Predictor and the R-script (see image above). 
-In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (*Homo sapiens GRCh38.p13*).  The resulting BAM file then needs to go through Freebayes for the detection of SNPs which results in a vcf file. Then the low-quality score SNPs are filtered away.
+In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (*Homo sapiens GRCh38.p13*).  The resulting BAM file then needs to go through Freebayes for the detection of variants which results in a vcf file. Then the low-quality score variants are filtered away.
 
-The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict the effect of each gene and outputs a tab-delimited text file containing information of every detected SNP by Freebayes. 
+The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict the effect of each gene and outputs a tab-delimited text file containing information of every detected variants by Freebayes. 
 
 Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores, the missense mutation and known heart disease-causing genes provided in the gene_list.csv file. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score and the provided heart disease-causing genes. The second filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and the provided heart disease-causing genes. And the last filter filters everything that doesn’t contain a missense mutation, a low Sift score and the provided heart disease-causing genes.
-All 3 filters also output an extra file, a list of all possibly heart disease-causing SNPs.
+All 3 filters also output an extra file, a list of all possibly heart disease-causing variants.
 
 # Manual
 **Needed tools for the private Galaxy:**
@@ -42,7 +42,7 @@ All 3 filters also output an extra file, a list of all possibly heart disease-ca
 Perform quality control on the Illumina sequencing data in Galaxy with FastQC and look at the result.
 
 **Step 2:**
-Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_SNPs.ga), which is available in the Github repository, in the private Galaxy to identify the SNPs with the following settings:
+Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_Variants.ga), which is available in the Github repository, in the private Galaxy to identify the variants with the following settings:
  - Indicate in the Trimmomatic tool if your data is Single-end or paired-end reads.
  - Insert a HEADCROP operation in the Trimmomatic tool and indicate the number of bases to remove from the start with the information of the quality control in step 1.
  - Indicate in the BWA tool to use the *GRCh38/hg38* as the reference genome and if the input is a Single-end or paired-end read.
