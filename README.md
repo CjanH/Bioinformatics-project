@@ -18,7 +18,7 @@ In this project, we have created a workflow to identify genetic variants that ma
 
 
 # Workflow
-![alt text](https://raw.githubusercontent.com/CjanH/Bioinformatics-project/master/Flowchart.png?token=APRFBSZXCWIU5RXM3JBBCKS6YUF4W)
+![](Flowchart.png)
 The workflow consists of 3 parts: Galaxy, Variant Effect Predictor and the R-script (see image above). 
 In the galaxy pipeline, the quality of the Illumina sequencing data is assessed and processed. The processing consists of trimming and mapping of the reads. The reads are mapped against the human reference genome (*Homo sapiens GRCh38.p13*).  The resulting BAM file then needs to go through Freebayes for the detection of SNPs which results in a vcf file. Then the low-quality score SNPs are filtered away.
 
