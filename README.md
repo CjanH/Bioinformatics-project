@@ -55,7 +55,7 @@ Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predic
 
 **Step 4:**
 Download the gene_list.csv file and rename the txt file to r_script_input.txt.
-Run the R-script (r-script_disease_causing_genes_filtering_V2.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device. But first set a working directory (all the files needs to be in the working directory for the script to work properly). 
+Run the R-script (r-script_disease_causing_genes_filtering_V2_with_english_comments.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device. But first set a working directory (all the files needs to be in the working directory for the script to work properly). 
 
 
 
