@@ -45,9 +45,9 @@ Perform quality control on the Illumina sequencing data in Galaxy with FastQC an
 Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_SNPs.ga), which is available in the Github repository, in the private Galaxy to identify the SNPs with the following settings:
  - Indicate in the Trimmomatic tool if your data is Single-end or paired-end reads.
  - Insert a HEADCROP operation in the Trimmomatic tool and indicate the number of bases to remove from the start with the information of the quality control in step 1.
- - Indicate in the BWA tool to use the GRCh38/hg38 as the reference genome.
+ - Indicate in the BWA tool to use the *GRCh38/hg38* as the reference genome.
  - Indicate in the MarkDuplicates tool to do not write duplicates to the output file.
- - Indicate in the Freebayes tool to use the GRCh38/hg38 as the reference genome.
+ - Indicate in the Freebayes tool to use the *GRCh38/hg38* as the reference genome.
  - Indicate in the SnpSift Filter tool the Filter criteria with ‘( QUAL > 20 )’.
 
 **Step 3:**
