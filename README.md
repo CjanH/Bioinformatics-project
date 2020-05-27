@@ -24,7 +24,7 @@ In the galaxy pipeline, the quality of the Illumina sequencing data is assessed 
 
 The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict the effect of each gene and outputs a tab-delimited text file containing information of every detected SNP by Freebayes. 
 
-Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores and the missense mutation. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score. The second filter filters everything that doesn’t contain a missense mutation and a high PolyPhen score. And the last filter filters everything that doesn’t contain a missense mutation and a low Sift score.
+Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores, the missense mutation and known heart disease-causing genes provided in the gene_list.csv file. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score and the provided heart disease-causing genes. The second filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and the provided heart disease-causing genes. And the last filter filters everything that doesn’t contain a missense mutation, a low Sift score and the provided heart disease-causing genes.
 All 3 filters also output an extra file, a list of all possibly disease-causing SNPs.
 
 # Manual
@@ -54,7 +54,7 @@ Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-P
 Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predictor against the Ensembl/GENCODE transcripts database and download the txt file.
 
 **Step 4:**
-Rename the txt file to r_script_input.txt and run the R-script (r-script_disease_causing_genes_filtering_V2.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device.
+Rename the txt file to r_script_input.txt and run the R-script (r-script_disease_causing_genes_filtering_V2.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device. 
 
 
 You can find the example output in this GitHub repository in the Example_outputs folder.
