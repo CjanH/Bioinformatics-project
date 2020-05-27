@@ -57,5 +57,5 @@ Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predic
 Rename the txt file to r_script_input.txt and run the R-script (r-script_disease_causing_genes_filtering_V2.R) provided in the Github repository on the txt file to filter unneeded information with Rstudio, which can be done in Galaxy or on your local device.
 
 
-You can find the example output in this GitHub repository as: example_output_heart.txt, example_output_heart_list.txt
+You can find the example output in this GitHub repository as: example_output_heart_both.csv, example_output_heart_both_list.csv
 
