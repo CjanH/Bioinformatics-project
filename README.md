@@ -13,7 +13,7 @@ The goal of this project is to create a workflow in the Galaxy platform that ide
 
 **Approach of the project**
 
-In this project, we have created a workflow to identify genetic variants that may underly cardiovascular diseases. This workflow starts with a quality control on the RNA sequence data. An publicly available dataset was used to create the workflow. Where needed, quality was improved by trimming the dataset. The good quality output was used to map and align to the human reference genome (*Homo sapiens GRCh38.p13*). After that, single nucleotide polymorphisms (SNPs) are determined and checked on quality. The SNPs with a good quality score are used for the hazard determination in the Ensemble Variant Effect Predictor (VEP) tool. This output is edited in R Studio to a clear spreadsheet. 
+In this project, we have created a workflow to identify genetic variants that may underly cardiovascular diseases. This workflow starts with a quality control on the RNA sequence data. An publicly available dataset was used to create the workflow. Where needed, quality was improved by trimming the dataset. The good quality output was used to map and align to the human reference genome (*Homo sapiens GRCh38.p13*). After that, variants are determined and checked on quality. The variants with a good quality score are used for the hazard determination in the Ensemble Variant Effect Predictor (VEP) tool. This output is edited in R Studio to a clear spreadsheet. 
 
 
 
@@ -27,8 +27,8 @@ The Variant Effect Predictor (VEP) program uses the filtered vcf file to predict
 Rstudio runs the VEP output through an R-script, filtering any unwanted information. The filtering is based on the PolyPhen and Sift scores, the missense mutation and known heart disease-causing genes provided in the gene_list.csv file. The script runs 3 filters on the text file, The first filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and a low Sift score and the provided heart disease-causing genes. The second filter filters everything that doesn’t contain a missense mutation, a high PolyPhen score and the provided heart disease-causing genes. And the last filter filters everything that doesn’t contain a missense mutation, a low Sift score and the provided heart disease-causing genes.
 All 3 filters also output an extra file, a list of all possibly heart disease-causing variants.
 
-# Manual
-**Needed tools for the private Galaxy:**
+# Tools
+1) **Private Galaxy:**
  - FastQC             *Galaxy Version 0.72*
  - Trimmomatic        *Galaxy Version 0.36.5*
  - BWA                *Galaxy Version 0.7.17.4*
@@ -38,6 +38,11 @@ All 3 filters also output an extra file, a list of all possibly heart disease-ca
  - SnpSift Filter     *Galaxy Version 4.3*
  - Rstudio (optional) *Version 1.3.959*
 
+2) **Ensembl’s Variant Effect Predictor webpage**
+
+3) **Rstudio *Version 1.3.959***
+
+# Manual
 **Step 1:**
 Perform quality control on the Illumina sequencing data in Galaxy with FastQC and look at the result.
 
@@ -51,7 +56,7 @@ Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-P
  - Indicate in the SnpSift Filter tool the Filter criteria with ‘( QUAL > 20 )’.
 
 **Step 3:**
-Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predictor against the Ensembl/GENCODE transcripts database and download the txt file.
+Run the resulting vcf file from step 2 through Ensembl’s Variant Effect Predictor against the Ensembl/GENCODE transcripts database with default settings and download the txt file. Optionally you can run it with an R-script with the Bioconductor package on a Linux or MAC operating system.
 
 **Step 4:**
 Download the gene_list.csv file and rename the txt file to r_script_input.txt.
