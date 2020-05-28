@@ -9,11 +9,11 @@ At this time, one out of every three people will die of cardiovascular diseases.
 
 **Goal of the project**
 
-The goal of this project is to create a workflow in the Galaxy platform that identifies these variants, that may underly cardiovascular diseases. Various tools will be used to check the quality, prepare the RNA sequences, and alignment to a reference genome. The resulting alignment will be used to determine if there are any variations present. The data comes from real patients and thus must be handled with privacy in mind. The RNA sequence data for the project is provided by Utrecht UMC. The resulting workflow should be used in a private galaxy server. 
+The goal of this project is to create a workflow in the Galaxy platform that identifies these variants, that may underly cardiovascular diseases. Various tools will be used to check the quality, prepare the RNA sequences, and alignment to a reference genome. The resulting alignment will be used to determine if there are any variations present. The RNA sequence data for the project is provided by Utrecht UMC.
 
 **Approach of the project**
 
-In this project, we have created a workflow to identify genetic variants that may underly cardiovascular diseases. This workflow starts with a quality control on the RNA sequence data. An publicly available dataset was used to create the workflow. Where needed, quality was improved by trimming the dataset. The good quality output was used to map and align to the human reference genome (*Homo sapiens GRCh38.p13*). After that, variants are determined and checked on quality. The variants with a good quality score are used for the hazard determination in the Ensemble Variant Effect Predictor (VEP) tool. This output is edited in R Studio to a clear spreadsheet. 
+In this project, we have created a workflow to identify genetic variants that may underly cardiovascular diseases. This workflow starts with a quality control on the RNA sequence data. An publicly available dataset was used to create the workflow. Where needed, quality was improved by trimming the dataset. The good quality output was used to map and align to the human reference genome (*Homo sapiens GRCh38.p13*). After that, variants are determined and checked on quality. The variants with a good quality score are used for the hazard determination in the Ensembl Variant Effect Predictor (VEP) tool. This output is edited in R-Studio to a clear spreadsheet. 
 
 
 
