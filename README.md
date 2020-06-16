@@ -47,7 +47,7 @@ All 3 filters also output an extra file, a list of all possibly heart disease-ca
 Perform quality control on the Illumina sequencing data in Galaxy with FastQC and look at the result.
 
 **Step 2:**
-Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_Variants.ga), which is available in the Github repository, in the private Galaxy to identify the variants with the following settings:
+Run the  Illumina sequencing data through the Galaxy pipeline (Galaxy-Workflow-Project_pipeline_to_identify_Variants.ga), which is available in the Github repository in the Galaxy folder, in the private Galaxy to identify the variants with the following settings:
 
 (**WARNING:** Ensembl’s Variant Effect Predictor is unable to run large data sizes, if the output is too large for VEP, try using Lofreq instead of Freebayes for variant calling. NOTE a locally cached reference genome needs to be provided for Lofreq)
  - Indicate in the Trimmomatic tool if your data is Single-end or paired-end reads.
