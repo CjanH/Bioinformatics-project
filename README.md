@@ -66,5 +66,5 @@ Run the R-script (r-script_disease_causing_genes_filtering_V2_with_english_comme
 
 
 
-You can find the example output in this GitHub repository in the Example_outputs folder.
+You can find an example of the output in this GitHub repository in the Datasets_generated_analysed_during_project folder.
 
